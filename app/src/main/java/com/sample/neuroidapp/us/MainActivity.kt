@@ -15,6 +15,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.apply {
+            val sessionId = NeuroID.getInstance().getSessionId()
+            textViewSessionId.text = sessionId
+
             val yearList = resources.getStringArray(R.array.nid_app_array_years)
             val monthList = resources.getStringArray(R.array.nid_app_array_months)
 
