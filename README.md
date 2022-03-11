@@ -59,7 +59,9 @@ keyAlias=Key Alias
 storeFile=/Users/.../yourKeystore. keystore path where the file is located 
 ```
 > For more information about creating your own signing key, see the following link:
+
 > [Sign your app - Google Developers](https://developer.android.com/studio/publish/app-signing)
+
 > [Stack overflow - Create keystore](https://stackoverflow.com/questions/3997748/how-can-i-create-a-keystore)
 
 3. Clean and rebuild the project.
