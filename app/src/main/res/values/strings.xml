@@ -53,6 +53,18 @@
     <string name="nid_app_demo_employer">Employer</string>
     <string name="nid_app_demo_employer_address">Employer Address</string>
     <string name="nid_app_demo_employer_phone_number">Employer Phone Number</string>
+    <string name="nid_app_demo_continue">Continue</string>
+
+    <string name="nid_app_demo_employer_age_work">Age at work (years)</string>
+    <string name="nid_app_demo_own_house">Own house?</string>
+    <string name="nid_app_demo_yes_option">Yes</string>
+    <string name="nid_app_demo_no_option">No</string>
+    <string name="nid_app_demo_have_a_car">Do you have a car?</string>
+    <string name="nid_app_demo_marital_status">Marital status</string>
+    <string name="nid_app_demo_marital_status_single">Single</string>
+    <string name="nid_app_demo_marital_status_married">Married</string>
+    <string name="nid_app_demo_number_dependents">Number of economic dependents</string>
+
     <string name="nid_app_demo_agree_and_check">Agree and Check Tour Loan Options</string>
     <string name="nid_app_demo_agree_and_check_description">Checking your loan options does not affect your credit score.</string>
 </resources>
