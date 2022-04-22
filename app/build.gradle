@@ -17,8 +17,8 @@ android {
         applicationId "com.sample.neuroidapp.us"
         minSdk 21
         targetSdk 31
-        versionCode 2
-        versionName "1.0.2"
+        versionCode 4
+        versionName "1.0.3"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -82,6 +82,6 @@ dependencies {
     implementation files('libs/neuro-id-android-v1.0-release.aar')
     implementation "androidx.security:security-crypto:1.1.0-alpha03"
     implementation "androidx.fragment:fragment-ktx:1.4.1"
-    implementation "androidx.navigation:navigation-fragment-ktx:2.4.1"
-    implementation "androidx.navigation:navigation-ui-ktx:2.4.1"
+    implementation "androidx.navigation:navigation-fragment-ktx:2.4.2"
+    implementation "androidx.navigation:navigation-ui-ktx:2.4.2"
 }
