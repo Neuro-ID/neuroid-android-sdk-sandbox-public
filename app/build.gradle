@@ -6,7 +6,7 @@ plugins {
 
 def keystorePropertiesFile = rootProject.file("keystore.properties")
 def keystoreProperties = new Properties()
-if ( keystorePropertiesFile.exists() ) {
+if (keystorePropertiesFile.exists()) {
     keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 }
 
@@ -17,8 +17,10 @@ android {
         applicationId "com.sample.neuroidapp.us"
         minSdk 21
         targetSdk 31
-        versionCode 4
-        versionName "1.0.3"
+        versionCode System.getenv("BUILD_NUMBER") as Integer ?: 0
+        //Do not modify this, will be change by CI Server
+        versionName "1.0.4" //Do not modify this, will be change by CI Server
+
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
