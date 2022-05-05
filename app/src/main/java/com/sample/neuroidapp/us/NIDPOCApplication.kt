@@ -9,7 +9,7 @@ class NIDPOCApplication : MultiDexApplication() {
 
         val neuroId = NeuroID.Builder(
             this,
-            "key_live_suj4CX90v0un2k1ufGrbItT5"
+            "key_live_IQMIhq2z33pL0jFRKTlWnZvb"
         ).build()
         NeuroID.setNeuroIdInstance(neuroId)
         NeuroID.getInstance().start()
