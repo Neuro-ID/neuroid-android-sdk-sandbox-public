@@ -19,7 +19,7 @@ android {
         targetSdk 31
         versionCode System.getenv("BUILD_NUMBER") as Integer ?: 1
         //Do not modify this, will be change by CI Server
-        versionName "1.0.6" //Do not modify this, will be change by CI Server
+        versionName "1.0.7" //Do not modify this, will be change by CI Server
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -67,7 +67,6 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
-    namespace 'com.sample.neuroidapp.us'
 }
 
 dependencies {
