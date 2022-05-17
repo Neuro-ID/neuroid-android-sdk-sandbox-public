@@ -17,10 +17,9 @@ android {
         applicationId "com.sample.neuroidapp.us"
         minSdk 21
         targetSdk 31
-        versionCode System.getenv("BUILD_NUMBER") as Integer ?: 0
+        versionCode System.getenv("BUILD_NUMBER") as Integer ?: 1
         //Do not modify this, will be change by CI Server
-        versionName "1.0.4" //Do not modify this, will be change by CI Server
-
+        versionName "1.0.6" //Do not modify this, will be change by CI Server
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -68,6 +67,7 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    namespace 'com.sample.neuroidapp.us'
 }
 
 dependencies {
@@ -81,7 +81,8 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 
-    implementation files('libs/neuro-id-android-sdk-androidLib-release.aar')
+    releaseImplementation files('libs/neuro-id-android-sdk-androidLib-release.aar')
+    debugImplementation files('libs/neuro-id-android-sdk-androidLib-debug.aar')
     implementation "androidx.security:security-crypto:1.1.0-alpha03"
     implementation "androidx.fragment:fragment-ktx:1.4.1"
     implementation "androidx.navigation:navigation-fragment-ktx:2.4.2"
