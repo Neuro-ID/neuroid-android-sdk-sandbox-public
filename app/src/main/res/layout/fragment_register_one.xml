@@ -1,36 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@android:color/white"
         tools:context=".MainActivity">
 
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="1dp"
             android:layout_height="1dp"
+            android:clickable="true"
             android:focusable="true"
             android:focusableInTouchMode="true"
-            android:clickable="true"
-            app:layout_constraintTop_toTopOf="parent"
+            android:orientation="vertical"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             tools:ignore="UselessLeaf" />
 
         <ImageView
             android:id="@+id/imageViewLogo"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
             android:layout_marginStart="60dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="60dp"
             android:contentDescription="@null"
             android:src="@drawable/nid_neuro_id_icon_title"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvSDKVersion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/imageViewLogo"
+            app:layout_constraintStart_toStartOf="@+id/imageViewLogo"
+            app:layout_constraintTop_toBottomOf="@id/imageViewLogo"
+            tools:text="Version number" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -38,43 +49,43 @@
             android:layout_marginBottom="6dp"
             android:text="@string/nid_app_demo_session_id"
             android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="@id/textViewSessionId"
-            app:layout_constraintBottom_toTopOf="@id/textViewSessionId"/>
+            app:layout_constraintBottom_toTopOf="@id/textViewSessionId"
+            app:layout_constraintStart_toStartOf="@id/textViewSessionId" />
 
         <TextView
             android:id="@+id/textViewSessionId"
-            android:background="@drawable/nid_round_rectangle"
             android:layout_width="0dp"
             android:layout_height="40dp"
-            android:layout_marginTop="45dp"
             android:layout_marginStart="14dp"
+            android:layout_marginTop="45dp"
             android:layout_marginEnd="14dp"
+            android:background="@drawable/nid_round_rectangle"
+            android:enabled="true"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:longClickable="true"
             android:paddingStart="12dp"
             android:paddingEnd="12dp"
-            android:gravity="center_vertical"
-            tools:text="216367512753"
-            android:textSize="16sp"
-            app:layout_constraintTop_toBottomOf="@id/imageViewLogo"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:enabled="true"
             android:textIsSelectable="true"
-            android:focusable="true"
-            android:longClickable="true" />
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvSDKVersion"
+            tools:text="216367512753" />
 
         <ScrollView
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginTop="20dp"
-            app:layout_constraintTop_toBottomOf="@id/textViewSessionId"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewSessionId">
 
             <LinearLayout
-                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
@@ -90,9 +101,9 @@
                         android:text="@string/nid_app_demo_subtitle_welcome"
                         android:textSize="22sp"
                         android:textStyle="bold"
-                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
                         android:id="@+id/textViewDescription"
@@ -101,9 +112,9 @@
                         android:layout_marginTop="10dp"
                         android:text="@string/nid_app_demo_subtitle_description"
                         android:textSize="16sp"
-                        app:layout_constraintTop_toBottomOf="@id/textViewSubtitle"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent" />
+                        app:layout_constraintTop_toBottomOf="@id/textViewSubtitle" />
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/textLayoutFirstName"
@@ -111,18 +122,18 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="30dp"
-                        app:layout_constraintTop_toBottomOf="@id/textViewDescription"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent">
+                        app:layout_constraintTop_toBottomOf="@id/textViewDescription">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/editTextFirstName"
                             android:layout_width="match_parent"
                             android:layout_height="45dp"
-                            android:inputType="textPersonName"
+                            android:hint="@string/nid_app_demo_first_name"
                             android:imeOptions="actionDone"
-                            android:paddingBottom="8dp"
-                            android:hint="@string/nid_app_demo_first_name"/>
+                            android:inputType="textPersonName"
+                            android:paddingBottom="8dp" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -132,18 +143,18 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
-                        app:layout_constraintTop_toBottomOf="@id/textLayoutFirstName"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent">
+                        app:layout_constraintTop_toBottomOf="@id/textLayoutFirstName">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/editTextLastName"
                             android:layout_width="match_parent"
                             android:layout_height="45dp"
+                            android:hint="@string/nid_app_demo_last_name"
                             android:imeOptions="actionDone"
-                            android:paddingBottom="8dp"
                             android:inputType="textPersonName"
-                            android:hint="@string/nid_app_demo_last_name"/>
+                            android:paddingBottom="8dp" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -154,9 +165,9 @@
                         android:layout_marginTop="20dp"
                         android:text="@string/nid_app_demo_date_birth"
                         android:textSize="16sp"
-                        app:layout_constraintTop_toBottomOf="@id/textLayoutLastName"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent" />
+                        app:layout_constraintTop_toBottomOf="@id/textLayoutLastName" />
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/textLayoutBirthYear"
@@ -164,19 +175,19 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="6dp"
-                        app:layout_constraintTop_toBottomOf="@id/textViewDateBirth"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent">
+                        app:layout_constraintTop_toBottomOf="@id/textViewDateBirth">
 
                         <AutoCompleteTextView
                             android:id="@+id/editTextBirthYear"
                             android:layout_width="match_parent"
                             android:layout_height="45dp"
+                            android:clickable="false"
                             android:focusable="false"
                             android:focusableInTouchMode="false"
-                            android:clickable="false"
-                            android:paddingBottom="10dp"
-                            android:hint="@string/nid_app_demo_select_an_item" />
+                            android:hint="@string/nid_app_demo_select_an_item"
+                            android:paddingBottom="10dp" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -186,19 +197,19 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        app:layout_constraintTop_toBottomOf="@id/textLayoutBirthYear"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent">
+                        app:layout_constraintTop_toBottomOf="@id/textLayoutBirthYear">
 
                         <AutoCompleteTextView
                             android:id="@+id/editTextBirthMonth"
                             android:layout_width="match_parent"
                             android:layout_height="45dp"
+                            android:clickable="false"
                             android:focusable="false"
                             android:focusableInTouchMode="false"
-                            android:clickable="false"
-                            android:paddingBottom="10dp"
-                            android:hint="@string/nid_app_demo_select_an_item" />
+                            android:hint="@string/nid_app_demo_select_an_item"
+                            android:paddingBottom="10dp" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -208,20 +219,20 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        app:layout_constraintTop_toBottomOf="@id/textLayoutBirthMonth"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent">
+                        app:layout_constraintTop_toBottomOf="@id/textLayoutBirthMonth">
 
                         <AutoCompleteTextView
                             android:id="@+id/editTextBirthDay"
                             android:layout_width="match_parent"
                             android:layout_height="45dp"
-                            android:focusable="false"
-                            android:focusableInTouchMode="false"
                             android:clickable="false"
                             android:enabled="false"
-                            android:paddingBottom="10dp"
-                            android:hint="@string/nid_app_demo_select_an_item" />
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:hint="@string/nid_app_demo_select_an_item"
+                            android:paddingBottom="10dp" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -231,18 +242,18 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
-                        app:layout_constraintTop_toBottomOf="@id/textLayoutBirthDay"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent">
+                        app:layout_constraintTop_toBottomOf="@id/textLayoutBirthDay">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/editTextEmail"
                             android:layout_width="match_parent"
                             android:layout_height="45dp"
-                            android:inputType="textEmailAddress"
+                            android:hint="@string/nid_app_demo_email"
                             android:imeOptions="actionDone"
-                            android:paddingBottom="8dp"
-                            android:hint="@string/nid_app_demo_email"/>
+                            android:inputType="textEmailAddress"
+                            android:paddingBottom="8dp" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -252,18 +263,18 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
-                        app:layout_constraintTop_toBottomOf="@id/textLayoutEmail"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent">
+                        app:layout_constraintTop_toBottomOf="@id/textLayoutEmail">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/editTextHomeCity"
                             android:layout_width="match_parent"
                             android:layout_height="45dp"
-                            android:inputType="textEmailAddress"
+                            android:hint="@string/nid_app_demo_home_city"
                             android:imeOptions="actionDone"
-                            android:paddingBottom="8dp"
-                            android:hint="@string/nid_app_demo_home_city"/>
+                            android:inputType="textEmailAddress"
+                            android:paddingBottom="8dp" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -273,19 +284,19 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
-                        app:layout_constraintTop_toBottomOf="@id/textLayoutHomeCity"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent">
+                        app:layout_constraintTop_toBottomOf="@id/textLayoutHomeCity">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/editTextZipCode"
                             android:layout_width="match_parent"
                             android:layout_height="45dp"
-                            android:inputType="number"
+                            android:hint="@string/nid_app_demo_home_zip_code"
                             android:imeOptions="actionDone"
-                            android:paddingBottom="8dp"
+                            android:inputType="number"
                             android:maxLength="5"
-                            android:hint="@string/nid_app_demo_home_zip_code"/>
+                            android:paddingBottom="8dp" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -295,19 +306,19 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
-                        app:layout_constraintTop_toBottomOf="@id/textLayoutZipCode"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent">
+                        app:layout_constraintTop_toBottomOf="@id/textLayoutZipCode">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/editTextPhoneNumber"
                             android:layout_width="match_parent"
                             android:layout_height="45dp"
+                            android:hint="@string/nid_app_demo_phone_number"
+                            android:imeOptions="actionDone"
                             android:inputType="phone"
                             android:maxLength="10"
-                            android:imeOptions="actionDone"
-                            android:paddingBottom="8dp"
-                            android:hint="@string/nid_app_demo_phone_number"/>
+                            android:paddingBottom="8dp" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -317,17 +328,17 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
-                        app:layout_constraintTop_toBottomOf="@id/textLayoutPhoneNumber"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent">
+                        app:layout_constraintTop_toBottomOf="@id/textLayoutPhoneNumber">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/editTextEmployer"
                             android:layout_width="match_parent"
                             android:layout_height="45dp"
+                            android:hint="@string/nid_app_demo_employer"
                             android:imeOptions="actionDone"
-                            android:paddingBottom="8dp"
-                            android:hint="@string/nid_app_demo_employer"/>
+                            android:paddingBottom="8dp" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -337,18 +348,18 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
-                        app:layout_constraintTop_toBottomOf="@id/textLayoutEmployer"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent">
+                        app:layout_constraintTop_toBottomOf="@id/textLayoutEmployer">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/editTextEmployerAddress"
                             android:layout_width="match_parent"
                             android:layout_height="45dp"
-                            android:inputType="textPostalAddress"
+                            android:hint="@string/nid_app_demo_employer_address"
                             android:imeOptions="actionDone"
-                            android:paddingBottom="8dp"
-                            android:hint="@string/nid_app_demo_employer_address"/>
+                            android:inputType="textPostalAddress"
+                            android:paddingBottom="8dp" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -358,19 +369,19 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
-                        app:layout_constraintTop_toBottomOf="@id/textLayoutEmployerAddress"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent">
+                        app:layout_constraintTop_toBottomOf="@id/textLayoutEmployerAddress">
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/editTextEmployerPhoneNumber"
                             android:layout_width="match_parent"
                             android:layout_height="45dp"
+                            android:hint="@string/nid_app_demo_employer_phone_number"
+                            android:imeOptions="actionDone"
                             android:inputType="number"
                             android:maxLength="10"
-                            android:imeOptions="actionDone"
-                            android:paddingBottom="8dp"
-                            android:hint="@string/nid_app_demo_employer_phone_number"/>
+                            android:paddingBottom="8dp" />
 
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -379,13 +390,13 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
+                        android:backgroundTint="#3579F7"
                         android:text="@string/nid_app_demo_continue"
                         android:textAllCaps="false"
-                        android:backgroundTint="#3579F7"
-                        app:layout_constraintTop_toBottomOf="@id/textLayoutEmployerPhoneNumber"
                         app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent" />
+                        app:layout_constraintTop_toBottomOf="@id/textLayoutEmployerPhoneNumber" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </LinearLayout>
