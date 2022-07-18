@@ -8,12 +8,13 @@ import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import com.neuroid.tracker.NeuroID
+import com.neuroid.tracker.utils.NIDVersion
 import com.sample.neuroidapp.us.databinding.FragmentRegisterOneBinding
 import com.sample.neuroidapp.us.extensions.getDays
 import com.sample.neuroidapp.us.listeners.NIDRegisterListener
 
-class NIDRegisterFragmentOne: Fragment() {
-    private lateinit var binding : FragmentRegisterOneBinding
+class NIDRegisterFragmentOne : Fragment() {
+    private lateinit var binding: FragmentRegisterOneBinding
     private var listener: NIDRegisterListener? = null
 
     override fun onAttach(context: Context) {
@@ -33,12 +34,13 @@ class NIDRegisterFragmentOne: Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
             val sessionId = NeuroID.getInstance().getSessionId()
+            NeuroID.getInstance().setScreenName("PERSONAL_DETAILS")
             textViewSessionId.text = sessionId
 
             val yearList = resources.getStringArray(R.array.nid_app_array_years)
             val monthList = resources.getStringArray(R.array.nid_app_array_months)
 
-            val adapterYear =  ArrayAdapter(
+            val adapterYear = ArrayAdapter(
                 requireContext(),
                 android.R.layout.simple_dropdown_item_1line,
                 yearList
@@ -48,7 +50,7 @@ class NIDRegisterFragmentOne: Fragment() {
                 setAdapter(adapterYear)
             }
 
-            val adapterMonth =  ArrayAdapter(
+            val adapterMonth = ArrayAdapter(
                 requireContext(),
                 android.R.layout.simple_dropdown_item_1line,
                 monthList
@@ -66,11 +68,13 @@ class NIDRegisterFragmentOne: Fragment() {
             buttonContinue.setOnClickListener {
                 listener?.goToNextScreen()
             }
+
+            tvSDKVersion.text = NIDVersion.getInternalCurrentVersion()
         }
     }
 
     private fun getAdapter(position: Int): ArrayAdapter<Int> {
-        return  ArrayAdapter(
+        return ArrayAdapter(
             requireContext(),
             android.R.layout.simple_dropdown_item_1line,
             getDays(position)

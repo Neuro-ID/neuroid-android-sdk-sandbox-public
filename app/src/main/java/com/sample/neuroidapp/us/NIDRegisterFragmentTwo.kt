@@ -30,6 +30,7 @@ class NIDRegisterFragmentTwo: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
+            NeuroID.getInstance().setScreenName("EMPLOYMENT_DETAILS")
             buttonAgreeAndCheck.setOnClickListener {
                 NeuroID.getInstance().formSubmit()
             }
