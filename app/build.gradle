@@ -46,14 +46,21 @@ android {
     }
 
     buildTypes {
-        debug {
-            minifyEnabled false
-        }
         release {
             minifyEnabled true
             shrinkResources = true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release
+        }
+        staging {
+            applicationIdSuffix ".staging"
+            minifyEnabled false
+            matchingFallbacks = ["release"]
+            signingConfig signingConfigs.release
+        }
+        debug {
+            applicationIdSuffix ".debug"
+            minifyEnabled false
         }
     }
     buildFeatures {
@@ -83,6 +90,7 @@ dependencies {
 
     releaseImplementation files('libs/androidLib/neuro-id-android-sdk-androidLib-release.aar')
     debugImplementation files('libs/androidLib/neuro-id-android-sdk-androidLib-debug.aar')
+    stagingImplementation files('libs/androidLib/neuro-id-android-sdk-androidLib-debug.aar')
     implementation "androidx.security:security-crypto:1.1.0-alpha03"
     implementation "androidx.fragment:fragment-ktx:1.4.1"
     implementation "androidx.navigation:navigation-fragment-ktx:2.4.2"

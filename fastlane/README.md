@@ -39,6 +39,14 @@ Submit a new Beta Build to Crashlytics Beta
 
 Submit a new Internal Build to Google Play
 
+### android staging
+
+```sh
+[bundle exec] fastlane android staging
+```
+
+Submit a new Internal Build to Google Play
+
 ### android deploy
 
 ```sh
