@@ -1,4 +1,4 @@
-name: Release By SDK updated(Internal)
+name: Release By SDK updated(Staging)
 on:
   push:
     branches:
@@ -7,7 +7,7 @@ env:
   BUILD_NUMBER: ${{github.run_number}}
 jobs:
   publish:
-    name: Release Simple Library
+    name: Publish Staging App
     runs-on: ubuntu-latest
 
     steps:
@@ -65,5 +65,5 @@ jobs:
         env:
           PLAY_CONFIG_JSON: ${{ secrets.PLAY_CONFIG_JSON }}
 
-      - name: Distribute app to Beta track 🚀
+      - name: Distribute app to Staging track 🚀
         run: fastlane staging
