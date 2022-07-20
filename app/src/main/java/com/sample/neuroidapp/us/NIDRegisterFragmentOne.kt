@@ -69,7 +69,8 @@ class NIDRegisterFragmentOne : Fragment() {
                 listener?.goToNextScreen()
             }
 
-            tvSDKVersion.text = NIDVersion.getInternalCurrentVersion()
+            tvSDKVersion.text =
+                NIDVersion.getInternalCurrentVersion() + " (" + BuildConfig.BUILD_TYPE + ")"
         }
     }
 
