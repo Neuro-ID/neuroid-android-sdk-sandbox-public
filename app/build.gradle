@@ -19,7 +19,7 @@ android {
         targetSdk 31
         versionCode System.getenv("BUILD_NUMBER") as Integer ?: 1
         //Do not modify this, will be change by CI Server
-        versionName "1.0.8" //Do not modify this, will be change by CI Server
+        versionName "2.0.0" //Do not modify this, will be change by CI Server
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
