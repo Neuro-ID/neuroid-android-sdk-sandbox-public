@@ -33,8 +33,8 @@ class NIDRegisterFragmentOne : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
-            val sessionId = NeuroID.getInstance().getSessionId()
-            NeuroID.getInstance().setScreenName("PERSONAL_DETAILS")
+            val sessionId = NeuroID.getInstance()?.getSessionId()
+            NeuroID.getInstance()?.setScreenName("PERSONAL_DETAILS")
             textViewSessionId.text = sessionId
 
             val yearList = resources.getStringArray(R.array.nid_app_array_years)
