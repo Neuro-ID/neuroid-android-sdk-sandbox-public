@@ -44,12 +44,14 @@
             tools:text="Version number" />
 
         <TextView
+            android:id="@+id/textViewSessionIdLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
             android:layout_marginBottom="6dp"
             android:text="@string/nid_app_demo_session_id"
             android:textSize="16sp"
-            app:layout_constraintBottom_toTopOf="@id/textViewSessionId"
+            app:layout_constraintTop_toBottomOf="@+id/tvSDKVersion"
             app:layout_constraintStart_toStartOf="@id/textViewSessionId" />
 
         <TextView
@@ -57,7 +59,7 @@
             android:layout_width="0dp"
             android:layout_height="40dp"
             android:layout_marginStart="14dp"
-            android:layout_marginTop="45dp"
+            android:layout_marginTop="8dp"
             android:layout_marginEnd="14dp"
             android:background="@drawable/nid_round_rectangle"
             android:enabled="true"
@@ -70,7 +72,39 @@
             android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvSDKVersion"
+            app:layout_constraintTop_toBottomOf="@id/textViewSessionIdLabel"
+            tools:text="216367512753" />
+
+        <TextView
+            android:id="@+id/textViewClientIdLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="6dp"
+            android:text="@string/nid_app_demo_client_id"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@id/textViewSessionId"
+            app:layout_constraintTop_toBottomOf="@+id/textViewSessionId" />
+
+        <TextView
+            android:id="@+id/textViewClientId"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="14dp"
+            android:background="@drawable/nid_round_rectangle"
+            android:enabled="true"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:longClickable="true"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:textIsSelectable="true"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewClientIdLabel"
             tools:text="216367512753" />
 
         <ScrollView
@@ -80,7 +114,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textViewSessionId">
+            app:layout_constraintTop_toBottomOf="@id/textViewClientId">
 
             <LinearLayout
                 android:layout_width="match_parent"
