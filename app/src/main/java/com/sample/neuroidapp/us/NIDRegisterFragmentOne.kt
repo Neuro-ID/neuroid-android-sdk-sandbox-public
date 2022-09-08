@@ -58,7 +58,7 @@ class NIDRegisterFragmentOne : Fragment() {
                 monthList
             )
 
-            editTextBirthMonth.apply {
+            dobMonth.apply {
                 setAdapter(adapterMonth)
                 setOnItemClickListener { _, _, position, _ ->
                     editTextBirthDay.setText("")
