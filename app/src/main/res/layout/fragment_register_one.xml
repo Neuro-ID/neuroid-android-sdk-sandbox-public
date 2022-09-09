@@ -161,7 +161,7 @@
                         app:layout_constraintTop_toBottomOf="@id/textViewDescription">
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/editTextFirstName"
+                            android:id="@+id/firstName"
                             android:layout_width="match_parent"
                             android:layout_height="45dp"
                             android:hint="@string/nid_app_demo_first_name"
@@ -182,7 +182,7 @@
                         app:layout_constraintTop_toBottomOf="@id/textLayoutFirstName">
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/editTextLastName"
+                            android:id="@+id/lastName"
                             android:layout_width="match_parent"
                             android:layout_height="45dp"
                             android:hint="@string/nid_app_demo_last_name"
@@ -236,7 +236,7 @@
                         app:layout_constraintTop_toBottomOf="@id/textLayoutBirthYear">
 
                         <AutoCompleteTextView
-                            android:id="@+id/editTextBirthMonth"
+                            android:id="@+id/dobMonth"
                             android:layout_width="match_parent"
                             android:layout_height="45dp"
                             android:clickable="false"
@@ -281,7 +281,7 @@
                         app:layout_constraintTop_toBottomOf="@id/textLayoutBirthDay">
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/editTextEmail"
+                            android:id="@+id/email"
                             android:layout_width="match_parent"
                             android:layout_height="45dp"
                             android:hint="@string/nid_app_demo_email"
@@ -302,7 +302,7 @@
                         app:layout_constraintTop_toBottomOf="@id/textLayoutEmail">
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/editTextHomeCity"
+                            android:id="@+id/city"
                             android:layout_width="match_parent"
                             android:layout_height="45dp"
                             android:hint="@string/nid_app_demo_home_city"
@@ -323,7 +323,7 @@
                         app:layout_constraintTop_toBottomOf="@id/textLayoutHomeCity">
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/editTextZipCode"
+                            android:id="@+id/homeZipCode"
                             android:layout_width="match_parent"
                             android:layout_height="45dp"
                             android:hint="@string/nid_app_demo_home_zip_code"
@@ -345,7 +345,7 @@
                         app:layout_constraintTop_toBottomOf="@id/textLayoutZipCode">
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/editTextPhoneNumber"
+                            android:id="@+id/phoneNumber"
                             android:layout_width="match_parent"
                             android:layout_height="45dp"
                             android:hint="@string/nid_app_demo_phone_number"
@@ -367,7 +367,7 @@
                         app:layout_constraintTop_toBottomOf="@id/textLayoutPhoneNumber">
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/editTextEmployer"
+                            android:id="@+id/employerlbl"
                             android:layout_width="match_parent"
                             android:layout_height="45dp"
                             android:hint="@string/nid_app_demo_employer"
@@ -387,7 +387,7 @@
                         app:layout_constraintTop_toBottomOf="@id/textLayoutEmployer">
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/editTextEmployerAddress"
+                            android:id="@+id/streetAddressLine1"
                             android:layout_width="match_parent"
                             android:layout_height="45dp"
                             android:hint="@string/nid_app_demo_employer_address"
@@ -408,7 +408,7 @@
                         app:layout_constraintTop_toBottomOf="@id/textLayoutEmployerAddress">
 
                         <com.google.android.material.textfield.TextInputEditText
-                            android:id="@+id/editTextEmployerPhoneNumber"
+                            android:id="@+id/employerPhoneNumberlbl"
                             android:layout_width="match_parent"
                             android:layout_height="45dp"
                             android:hint="@string/nid_app_demo_employer_phone_number"
