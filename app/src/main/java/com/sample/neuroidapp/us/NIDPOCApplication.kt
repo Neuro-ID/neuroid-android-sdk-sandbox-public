@@ -15,8 +15,7 @@ class NIDPOCApplication : MultiDexApplication() {
         NeuroID.getInstance()?.setEnvironment("LIVE")
         NeuroID.getInstance()?.setSiteId("form_dream102")
         val rnds = (0..10000).random().toString()
-        NeuroID.getInstance()?.setUserID(rnds)
         NeuroID.getInstance()?.start()
-
+        NeuroID.getInstance()?.setUserID(rnds)
     }
 }
