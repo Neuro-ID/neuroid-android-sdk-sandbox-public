@@ -9,11 +9,11 @@ class NIDPOCApplication : MultiDexApplication() {
 
         val neuroId = NeuroID.Builder(
             this,
-            "key_live_suj4CX90v0un2k1ufGrbItT5"
+            "key_live_dNoyQAlq8w1c0mCeHKl5Sejl"
         ).build()
         NeuroID.setNeuroIdInstance(neuroId)
         NeuroID.getInstance()?.setEnvironment("LIVE")
-        NeuroID.getInstance()?.setSiteId("form_dream102")
+        NeuroID.getInstance()?.setSiteId("form_picks709")
         val rnds = (0..10000).random().toString()
         NeuroID.getInstance()?.start()
         NeuroID.getInstance()?.setUserID(rnds)
