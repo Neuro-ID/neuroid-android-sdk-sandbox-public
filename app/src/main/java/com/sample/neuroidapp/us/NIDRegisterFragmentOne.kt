@@ -33,10 +33,17 @@ class NIDRegisterFragmentOne : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
-            val sessionId = NeuroID.getInstance()?.getSessionId()
+            //[form_id] : [TEST/LIVE] : [clientID] : [tabId] - [First Timestamp in the session]
+            val dynamoKey = NeuroID.getInstance()?.getSiteId() + " : " +
+                    NeuroID.getInstance()?.getEnvironment() + " : " +
+                    NeuroID.getInstance()?.getClientId() + " : " +
+                    NeuroID.getInstance()?.getTabId() + " - " +
+                    NeuroID.getInstance()?.getFirstTS()
+
             val clientId = NeuroID.getInstance()?.getClientId()
             NeuroID.getInstance()?.setScreenName("PERSONAL_DETAILS")
-            textViewSessionId.text = sessionId
+
+            textViewSessionId.text = dynamoKey
             textViewClientId.text = clientId
 
             val yearList = resources.getStringArray(R.array.nid_app_array_years)
