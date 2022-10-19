@@ -99,8 +99,11 @@ class NIDRegisterFragmentOne : Fragment() {
             tvSDKVersion.text =
                 NIDVersion.getInternalCurrentVersion() + " (" + BuildConfig.BUILD_TYPE + ")"
 
+            collect(viewModel.error) {
+                // No op
+            }
             collect(viewModel.score) { scores ->
-                textViewScore.text = (scores.lastOrNull()?.score ?: 0.0).toString()
+                textViewScore.text = (scores.firstOrNull()?.score ?: 0.0).toString()
             }
         }
     }

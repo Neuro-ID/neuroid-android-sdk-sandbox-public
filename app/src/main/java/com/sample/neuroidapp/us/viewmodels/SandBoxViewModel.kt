@@ -66,7 +66,9 @@ class SandBoxViewModel @Inject constructor(
                     configHelper.userId
                 )
             }
-            if (!result.isError) {
+            if (result.isError) {
+                _error.value = result.networkError?.rawError ?: "No Error Description"
+            } else {
                 _score.value = result.requiredResult.profile?.signals ?: emptyList()
             }
         }
