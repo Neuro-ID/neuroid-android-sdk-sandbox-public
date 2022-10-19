@@ -1,7 +1,8 @@
 <resources>
     <string name="app_name">Neuro ID POC</string>
-    <string name="nid_app_demo_session_id">Session ID:</string>
+    <string name="nid_app_demo_user_id">User ID:</string>
     <string name="nid_app_demo_client_id">Client ID:</string>
+    <string name="nid_app_demo_score">Score:</string>
     <string name="nid_app_demo_subtitle_welcome">Welcome!! You\'re one step away from checking your loan options. $</string>
     <string name="nid_app_demo_subtitle_description">Checking your loan options does not affect your credit score.</string>
     <string name="nid_app_demo_first_name">First Name</string>
@@ -55,6 +56,7 @@
     <string name="nid_app_demo_employer_address">Employer Address</string>
     <string name="nid_app_demo_employer_phone_number">Employer Phone Number</string>
     <string name="nid_app_demo_continue">Continue</string>
+    <string name="nid_app_demo_reset">Reset Application</string>
 
     <string name="nid_app_demo_employer_age_work">Age at work (years)</string>
     <string name="nid_app_demo_own_house">Own house?</string>

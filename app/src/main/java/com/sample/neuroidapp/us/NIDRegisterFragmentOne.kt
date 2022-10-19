@@ -7,15 +7,19 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import com.neuroid.tracker.NeuroID
 import com.neuroid.tracker.utils.NIDVersion
 import com.sample.neuroidapp.us.databinding.FragmentRegisterOneBinding
 import com.sample.neuroidapp.us.extensions.getDays
 import com.sample.neuroidapp.us.listeners.NIDRegisterListener
+import com.sample.neuroidapp.us.utils.collect
+import com.sample.neuroidapp.us.viewmodels.SandBoxViewModel
 
 class NIDRegisterFragmentOne : Fragment() {
     private lateinit var binding: FragmentRegisterOneBinding
     private var listener: NIDRegisterListener? = null
+    private val viewModel: SandBoxViewModel by activityViewModels()
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -40,11 +44,10 @@ class NIDRegisterFragmentOne : Fragment() {
                     NeuroID.getInstance()?.getTabId() + " - " +
                     NeuroID.getInstance()?.getFirstTS()
 
-            val clientId = NeuroID.getInstance()?.getClientId()
             NeuroID.getInstance()?.setScreenName("PERSONAL_DETAILS")
 
-            textViewSessionId.text = dynamoKey
-            textViewClientId.text = clientId
+            textViewUserId.text = NeuroID.getInstance()?.getUserId()
+            textViewClientId.text = dynamoKey
 
             val yearList = resources.getStringArray(R.array.nid_app_array_years)
             val monthList = resources.getStringArray(R.array.nid_app_array_months)
@@ -78,9 +81,38 @@ class NIDRegisterFragmentOne : Fragment() {
                 listener?.goToNextScreen()
             }
 
+            buttonReset.setOnClickListener {
+                textViewClientId.text = ""
+                textViewScore.text = "0.0"
+                viewModel.restartApp()
+                textViewUserId.text = NeuroID.getInstance()?.getUserId()
+                val dynamoKeyReset = NeuroID.getInstance()?.getSiteId() + " : " +
+                        NeuroID.getInstance()?.getEnvironment() + " : " +
+                        NeuroID.getInstance()?.getClientId() + " : " +
+                        NeuroID.getInstance()?.getTabId() + " - " +
+                        NeuroID.getInstance()?.getFirstTS()
+
+                textViewClientId.text = dynamoKeyReset
+
+            }
+
             tvSDKVersion.text =
                 NIDVersion.getInternalCurrentVersion() + " (" + BuildConfig.BUILD_TYPE + ")"
+
+            collect(viewModel.score) { scores ->
+                textViewScore.text = (scores.lastOrNull()?.score ?: 0.0).toString()
+            }
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        viewModel.startScoreTask()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        viewModel.stopScoreTask()
     }
 
     private fun getAdapter(position: Int): ArrayAdapter<Int> {

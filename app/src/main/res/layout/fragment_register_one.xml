@@ -49,15 +49,15 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="6dp"
-            android:text="@string/nid_app_demo_session_id"
+            android:text="@string/nid_app_demo_user_id"
             android:textSize="16sp"
             app:layout_constraintTop_toBottomOf="@+id/tvSDKVersion"
-            app:layout_constraintStart_toStartOf="@id/textViewSessionId" />
+            app:layout_constraintStart_toStartOf="@id/textViewUserId" />
 
         <TextView
-            android:id="@+id/textViewSessionId"
+            android:id="@+id/textViewUserId"
             android:layout_width="0dp"
-            android:layout_height="60dp"
+            android:layout_height="40dp"
             android:layout_marginStart="14dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="14dp"
@@ -83,13 +83,13 @@
             android:layout_marginBottom="6dp"
             android:text="@string/nid_app_demo_client_id"
             android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="@id/textViewSessionId"
-            app:layout_constraintTop_toBottomOf="@+id/textViewSessionId" />
+            app:layout_constraintStart_toStartOf="@id/textViewUserId"
+            app:layout_constraintTop_toBottomOf="@+id/textViewUserId" />
 
         <TextView
             android:id="@+id/textViewClientId"
             android:layout_width="0dp"
-            android:layout_height="40dp"
+            android:layout_height="60dp"
             android:layout_marginStart="14dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="14dp"
@@ -107,6 +107,36 @@
             app:layout_constraintTop_toBottomOf="@id/textViewClientIdLabel"
             tools:text="216367512753" />
 
+        <TextView
+            android:id="@+id/textViewScoreLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="6dp"
+            android:text="@string/nid_app_demo_score"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@+id/textViewClientId"
+            app:layout_constraintStart_toStartOf="@id/textViewClientId" />
+
+        <TextView
+            android:id="@+id/textViewScore"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="14dp"
+            android:background="@drawable/nid_round_rectangle"
+            android:enabled="true"
+            android:focusable="true"
+            android:gravity="center_vertical"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textViewScoreLabel"
+            android:text="0.0" />
+
         <ScrollView
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -114,7 +144,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textViewClientId">
+            app:layout_constraintTop_toBottomOf="@id/textViewScore">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -420,17 +450,29 @@
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <Button
-                        android:id="@+id/buttonContinue"
+                        android:id="@+id/buttonReset"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
+                        android:backgroundTint="#3579F7"
+                        android:text="@string/nid_app_demo_reset"
+                        android:textAllCaps="false"
+                        app:layout_constraintBottom_toTopOf="@id/buttonContinue"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textLayoutEmployerPhoneNumber" />
+
+                    <Button
+                        android:id="@+id/buttonContinue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
                         android:backgroundTint="#3579F7"
                         android:text="@string/nid_app_demo_continue"
                         android:textAllCaps="false"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/textLayoutEmployerPhoneNumber" />
+                        app:layout_constraintTop_toBottomOf="@id/buttonReset" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </LinearLayout>
