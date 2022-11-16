@@ -57,7 +57,7 @@ class SandBoxViewModel @Inject constructor(
         startScoreTask()
     }
 
-    private fun checkScore() {
+    fun checkScore() {
         viewModelScope.launch {
             val result = networkInteractor.safeApiCall {
                 nidServices.getProfile(
@@ -71,6 +71,14 @@ class SandBoxViewModel @Inject constructor(
             } else {
                 _score.value = result.requiredResult.profile?.signals ?: emptyList()
             }
+        }
+    }
+
+    fun closeSessionAndCheckScore() {
+        viewModelScope.launch {
+            NeuroID.getInstance()?.closeSession()
+            delay(2000)
+            checkScore()
         }
     }
 

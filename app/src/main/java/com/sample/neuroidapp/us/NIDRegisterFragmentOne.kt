@@ -95,6 +95,9 @@ class NIDRegisterFragmentOne : Fragment() {
                 textViewClientId.text = dynamoKeyReset
 
             }
+            buttonCloseSession.setOnClickListener {
+                viewModel.closeSessionAndCheckScore()
+            }
 
             tvSDKVersion.text =
                 NIDVersion.getInternalCurrentVersion() + " (" + BuildConfig.BUILD_TYPE + ")"
@@ -108,15 +111,6 @@ class NIDRegisterFragmentOne : Fragment() {
         }
     }
 
-    override fun onResume() {
-        super.onResume()
-        viewModel.startScoreTask()
-    }
-
-    override fun onPause() {
-        super.onPause()
-        viewModel.stopScoreTask()
-    }
 
     private fun getAdapter(position: Int): ArrayAdapter<Int> {
         return ArrayAdapter(

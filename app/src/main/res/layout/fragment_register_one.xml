@@ -9,24 +9,11 @@
         android:background="@android:color/white"
         tools:context=".MainActivity">
 
-        <LinearLayout
-            android:layout_width="1dp"
-            android:layout_height="1dp"
-            android:clickable="true"
-            android:focusable="true"
-            android:focusableInTouchMode="true"
-            android:orientation="vertical"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:ignore="UselessLeaf" />
-
         <ImageView
             android:id="@+id/imageViewLogo"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="60dp"
             android:layout_marginTop="20dp"
-            android:layout_marginEnd="60dp"
             android:contentDescription="@null"
             android:src="@drawable/nid_neuro_id_icon_title"
             app:layout_constraintEnd_toEndOf="parent"
@@ -44,84 +31,22 @@
             tools:text="Version number" />
 
         <TextView
-            android:id="@+id/textViewSessionIdLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="6dp"
-            android:text="@string/nid_app_demo_user_id"
-            android:textSize="16sp"
-            app:layout_constraintTop_toBottomOf="@+id/tvSDKVersion"
-            app:layout_constraintStart_toStartOf="@id/textViewUserId" />
-
-        <TextView
-            android:id="@+id/textViewUserId"
-            android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_marginStart="14dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="14dp"
-            android:background="@drawable/nid_round_rectangle"
-            android:enabled="true"
-            android:focusable="true"
-            android:gravity="center_vertical"
-            android:longClickable="true"
-            android:paddingStart="12dp"
-            android:paddingEnd="12dp"
-            android:textIsSelectable="true"
-            android:textSize="14sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textViewSessionIdLabel"
-            tools:text="216367512753" />
-
-        <TextView
-            android:id="@+id/textViewClientIdLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="6dp"
-            android:text="@string/nid_app_demo_client_id"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="@id/textViewUserId"
-            app:layout_constraintTop_toBottomOf="@+id/textViewUserId" />
-
-        <TextView
-            android:id="@+id/textViewClientId"
-            android:layout_width="0dp"
-            android:layout_height="60dp"
-            android:layout_marginStart="14dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="14dp"
-            android:background="@drawable/nid_round_rectangle"
-            android:enabled="true"
-            android:focusable="true"
-            android:gravity="center_vertical"
-            android:longClickable="true"
-            android:paddingStart="12dp"
-            android:paddingEnd="12dp"
-            android:textIsSelectable="true"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textViewClientIdLabel"
-            tools:text="216367512753" />
-
-        <TextView
             android:id="@+id/textViewScoreLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
             android:layout_marginTop="16dp"
+            android:layout_marginEnd="14dp"
             android:layout_marginBottom="6dp"
             android:text="@string/nid_app_demo_score"
             android:textSize="16sp"
-            app:layout_constraintTop_toBottomOf="@+id/textViewClientId"
-            app:layout_constraintStart_toStartOf="@id/textViewClientId" />
+            app:layout_constraintStart_toStartOf="@+id/textViewScore"
+            app:layout_constraintTop_toBottomOf="@+id/tvSDKVersion" />
 
         <TextView
             android:id="@+id/textViewScore"
             android:layout_width="0dp"
-            android:layout_height="60dp"
+            android:layout_height="wrap_content"
             android:layout_marginStart="14dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="14dp"
@@ -129,13 +54,13 @@
             android:enabled="true"
             android:focusable="true"
             android:gravity="center_vertical"
-            android:paddingStart="12dp"
-            android:paddingEnd="12dp"
+            android:padding="16dp"
+            android:text="0.0"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textViewScoreLabel"
-            android:text="0.0" />
+            app:layout_constraintTop_toBottomOf="@id/textViewScoreLabel" />
+
 
         <ScrollView
             android:layout_width="0dp"
@@ -144,7 +69,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/textViewScore">
+            app:layout_constraintTop_toBottomOf="@+id/textViewScore">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -159,15 +84,74 @@
                     android:paddingBottom="20dp">
 
                     <TextView
+                        android:id="@+id/textViewSessionIdLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="6dp"
+                        android:text="@string/nid_app_demo_user_id"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="@id/textViewUserId"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textViewUserId"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/nid_round_rectangle"
+                        android:enabled="true"
+                        android:focusable="true"
+                        android:gravity="center_vertical"
+                        android:longClickable="true"
+                        android:padding="16dp"
+                        android:textIsSelectable="true"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textViewSessionIdLabel"
+                        tools:text="216367512753" />
+
+                    <TextView
+                        android:id="@+id/textViewClientIdLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="6dp"
+                        android:text="@string/nid_app_demo_client_id"
+                        android:textSize="16sp"
+                        app:layout_constraintStart_toStartOf="@id/textViewUserId"
+                        app:layout_constraintTop_toBottomOf="@+id/textViewUserId" />
+
+                    <TextView
+                        android:id="@+id/textViewClientId"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/nid_round_rectangle"
+                        android:enabled="true"
+                        android:focusable="true"
+                        android:gravity="center_vertical"
+                        android:longClickable="true"
+                        android:padding="16dp"
+                        android:textIsSelectable="true"
+                        android:textSize="16sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/textViewClientIdLabel"
+                        tools:text="216367512753" />
+
+                    <TextView
                         android:id="@+id/textViewSubtitle"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
                         android:text="@string/nid_app_demo_subtitle_welcome"
                         android:textSize="22sp"
                         android:textStyle="bold"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toBottomOf="@+id/textViewClientId" />
 
                     <TextView
                         android:id="@+id/textViewDescription"
@@ -449,30 +433,41 @@
 
                     </com.google.android.material.textfield.TextInputLayout>
 
-                    <Button
-                        android:id="@+id/buttonReset"
+                    <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
-                        android:backgroundTint="#3579F7"
-                        android:text="@string/nid_app_demo_reset"
-                        android:textAllCaps="false"
-                        app:layout_constraintBottom_toTopOf="@id/buttonContinue"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/textLayoutEmployerPhoneNumber" />
-
-                    <Button
-                        android:id="@+id/buttonContinue"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:backgroundTint="#3579F7"
-                        android:text="@string/nid_app_demo_continue"
-                        android:textAllCaps="false"
+                        android:orientation="vertical"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/buttonReset" />
+                        app:layout_constraintTop_toBottomOf="@id/textLayoutEmployerPhoneNumber">
+
+                        <Button
+                            android:id="@+id/buttonCloseSession"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="#3579F7"
+                            android:text="@string/nid_app_close_session"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/buttonReset"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="#3579F7"
+                            android:text="@string/nid_app_demo_reset"
+                            android:textAllCaps="false" />
+
+                        <Button
+                            android:id="@+id/buttonContinue"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="#3579F7"
+                            android:text="@string/nid_app_demo_continue"
+                            android:textAllCaps="false" />
+                    </LinearLayout>
+
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </LinearLayout>

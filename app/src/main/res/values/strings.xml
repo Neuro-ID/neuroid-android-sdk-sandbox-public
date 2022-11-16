@@ -57,6 +57,7 @@
     <string name="nid_app_demo_employer_phone_number">Employer Phone Number</string>
     <string name="nid_app_demo_continue">Continue</string>
     <string name="nid_app_demo_reset">Reset Application</string>
+    <string name="nid_app_close_session">Close Session</string>
 
     <string name="nid_app_demo_employer_age_work">Age at work (years)</string>
     <string name="nid_app_demo_own_house">Own house?</string>
